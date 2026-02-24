@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Voice - Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const form = document.querySelector("form");
+
+    form.addEventListener("submit", function(event) {
+        event.preventDefault(); 
+        const studentId = document.querySelector("input[type='text']").value;
+        const password = document.querySelector("input[type='password']").value;
+        if (studentId === "" || password === "") {
+            alert("Please fill all fields");
+        } else {
+            alert("Login successful!");
+            window.location.href = "vote.html";
+        }
+    });
+});
+</script>
+<body class="login-page">
+
+    <div class="container">
+        <h1>Student Voice</h1>
+        <p class="slogan">Your voice matters — make it count</p>
+
+        <form>
+            <label>Student ID</label>
+            <input type="text" placeholder="Enter your ID" required>
+
+            <label>Password</label>
+            <input type="password" placeholder="Enter your password" required>
+
+            <button type="submit">Log In</button>
+
+            <p class="signup-text">
+                Don't have an account? <a href="sign.html">Sign Up</a>
+            </p>
+        </form>
+    </div>
+
+</body>
+</html>
